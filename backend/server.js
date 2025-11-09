@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -25,6 +25,12 @@ if (!WEATHER_API_KEY) {
 if (!JWT_SECRET || JWT_SECRET === 'your-secret-key-change-in-production') {
   console.warn('⚠️  WARNING: Using default JWT secret. Replace with a secure value in production.');
 }
+
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://learning-language-website.vercel.app'],
+  credentials: true
+}));
+app.use(express.json());
 
 // ----- MongoDB Connection -----
 const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/skycast-mega';
