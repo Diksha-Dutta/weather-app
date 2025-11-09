@@ -27,13 +27,13 @@ if (!JWT_SECRET || JWT_SECRET === 'your-secret-key-change-in-production') {
 }
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://learning-language-website.vercel.app'],
+  origin: ['http://localhost:5173','https://weather-app-ten-vert-85.vercel.app/'],
   credentials: true
 }));
 app.use(express.json());
 
 // ----- MongoDB Connection -----
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/skycast-mega';
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/skycast';
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
