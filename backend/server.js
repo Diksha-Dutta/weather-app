@@ -570,7 +570,7 @@ app.post('/api/ai/chat', async (req, res) => {
 What would you like to know?`;
     }
 
-    res.json({ response, userId }); // Include userId in response if you want to track it
+    res.json({ response, userId }); 
   } catch (error) {
     console.error('Chat failed:', error.message);
     res.status(500).json({ error: 'Chat failed' });
