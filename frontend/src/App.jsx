@@ -62,7 +62,7 @@ const App = () => {
   // Health & Safety
   const [healthSafety, setHealthSafety] = useState(null);
 
-  const API_BASE = 'http://localhost:3001/api';
+  const API_BASE = 'https://weather-app-e40x.onrender.com/api';
 
   // Load token & verify on mount
   useEffect(() => {
